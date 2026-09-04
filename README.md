@@ -1,59 +1,60 @@
-# AnbuPortfolio
+# Anbu Murugesan — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+Angular 22 (standalone components) portfolio site. Hero section, a 10-card
+project grid with 3D flip cards and per-card canvas animations, and
+case-study modals. See `src/app/portfolio.service.ts` for all project
+content.
 
-## Development server
+A FastAPI contact-form backend lives in `server/` but is currently **not**
+wired into the UI — the live "Connect with me" button is a plain `mailto:`
+link. The backend is dormant scaffolding for a future contact-form feature.
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development
 
 ```bash
-ng generate component component-name
+npm install
+npm start          # ng serve, http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+If you want to exercise the dormant contact-form backend locally:
 
 ```bash
-ng generate --help
+cd server
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+cp .env.example .env   # fill in real SMTP creds to send actual email;
+                        # leave blank and it just logs inquiries instead
+.venv/bin/uvicorn main:app --reload --port 8000
 ```
+
+`ng serve --proxy-config proxy.conf.json` (or `npm start`, which already uses
+it via `angular.json`) routes `/api/*` to `localhost:8000` in dev.
 
 ## Building
 
-To build the project run:
-
 ```bash
-ng build
+npm run build       # outputs to dist/anbu-portfolio/browser
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Deployment (GitHub Pages)
 
-## Running unit tests
+`.github/workflows/deploy.yml` builds and publishes the site to GitHub
+Pages on every push to `main`, at `https://anbujas.github.io/portfolio/`.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+One-time setup, after pushing this repo to GitHub as `anbujas/portfolio`:
+
+1. Repo **Settings → Pages → Source** → select **GitHub Actions**.
+2. Push to `main` (or run the workflow manually from the **Actions** tab).
+
+If you deploy under a different repo name or path, update the
+`--base-href` flag in the workflow to match.
+
+The FastAPI backend in `server/` is not deployed by this workflow — it's
+static-only. Deploying the backend (if the contact form is wired back in)
+would need separate hosting (Render, Fly.io, etc.) plus a proxy or absolute
+API URL, since GitHub Pages serves static files only.
+
+## Testing
 
 ```bash
-ng test
+npm test            # unit tests via Vitest
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
