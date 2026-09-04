@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+:root {
+	--bg: #0a0e1a;
+	--card-bg: #0f1729;
+	--text: #e1e8f0;
+	--muted: #a0aec0;
+	--blue: #3b82f6;
+	--teal: #0D6E6E;
+	--emerald: #10b981;
+	--emerald-text: #059669;
+	--orange: #f97316;
+	--card-border: #1e40af;
+	--tech-badge-bg: #1e3a8a;
+	--tech-badge-text: #93c5fd;
+	font-family: 'Space Grotesk', sans-serif;
+	color: var(--text);
+	background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+	html { scroll-behavior: smooth; }
+}

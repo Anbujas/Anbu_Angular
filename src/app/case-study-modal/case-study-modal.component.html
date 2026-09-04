@@ -1,0 +1,42 @@
+<div class="modal-overlay" *ngIf="card" (click)="close()">
+  <div
+    class="modal-panel"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="card.title + ' case study'"
+    (click)="$event.stopPropagation()"
+  >
+    <button type="button" class="modal-close" (click)="close()" aria-label="Close">✕</button>
+
+    <header class="modal-header">
+      <h3>{{ card.title }}</h3>
+      <p class="modal-summary">{{ card.summary }}</p>
+    </header>
+
+    <hr class="modal-separator" />
+
+    <section class="modal-section">
+      <p class="modal-label">Problem:</p>
+      <p>{{ card.problem }}</p>
+    </section>
+
+    <section class="modal-section">
+      <p class="modal-label">Solution:</p>
+      <p>{{ card.solution }}</p>
+    </section>
+
+    <section class="modal-section">
+      <p class="modal-label">Result:</p>
+      <p>{{ card.result }}</p>
+    </section>
+
+    <section class="modal-section metrics-section">
+      <p class="modal-label">Key Metrics:</p>
+      <ul class="metrics-badges">
+        <li *ngFor="let metric of card.keyMetrics">{{ metric }}</li>
+      </ul>
+    </section>
+
+    <button type="button" class="modal-close-button" (click)="close()">Close</button>
+  </div>
+</div>

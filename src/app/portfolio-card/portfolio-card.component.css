@@ -1,0 +1,133 @@
+:host { display: block; }
+
+.card {
+  position: relative;
+  min-height: 288px;
+  perspective: 1200px;
+  transition: transform .2s ease;
+}
+.card:hover { transform: translateY(-3px); }
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 288px;
+  transition: transform .6s ease;
+  transform-style: preserve-3d;
+}
+.card:hover .card-inner,
+.card:focus-within .card-inner { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.card-back { transform: rotateY(180deg); overflow-y: auto; }
+
+.card.featured .card-front,
+.card.featured .card-back { border-width: 2px; border-color: var(--blue); }
+
+/* Hover: flips to the back and shifts the accent to emerald */
+.card:hover .card-front,
+.card:hover .card-back {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, .3), 0 12px 26px rgba(0, 0, 0, .35);
+}
+
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-emoji {
+  display: inline-block;
+  font-size: 48px;
+  line-height: 1;
+  animation: emoji-float 2.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.card:hover .card-emoji { animation-name: emoji-bounce; animation-duration: 1s; }
+
+@keyframes emoji-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.05); }
+}
+@keyframes emoji-bounce {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  30% { transform: translateY(-6px) scale(1.15) rotate(-6deg); }
+  60% { transform: translateY(0) scale(1.05) rotate(4deg); }
+}
+
+.impact-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 700 8px 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  color: #ffffff;
+}
+.impact-badge.blue { background: var(--blue); }
+.impact-badge.emerald { background: var(--emerald); }
+.impact-badge.orange { background: var(--orange); }
+.impact-badge.large { padding: 3px 10px; font-size: 9px; }
+
+.card-canvas { width: 100%; height: 50px; display: block; }
+
+.card-title { margin: 0; color: var(--text); font: 700 14px 'Space Grotesk', sans-serif; }
+
+.tech-badges { display: flex; flex-wrap: wrap; gap: 5px; list-style: none; margin: 0; padding: 0; }
+.tech-badges li {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--tech-badge-bg);
+  color: var(--tech-badge-text);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.card-summary {
+  margin: 2px 0 0;
+  color: var(--emerald-text);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.learn-more {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: var(--emerald);
+  color: #ffffff;
+  font: 700 .72rem 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  min-height: 36px;
+  transition: background .2s ease, filter .2s ease;
+}
+.learn-more:hover { filter: brightness(1.1); }
+.learn-more:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.learn-more.ghost { background: transparent; border: 1px solid var(--emerald); color: var(--emerald); }
+.learn-more.ghost:hover { background: var(--emerald); color: #ffffff; }
+
+.back-eyebrow { margin: 0; color: var(--teal); font: 700 9px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+.back-block p { margin: 2px 0 0; color: #cbd5e1; font-size: .66rem; line-height: 1.45; }
+.back-label { color: var(--blue); font: 700 .58rem 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card-inner, .card-front, .card-back { transition: none; }
+  .card:hover { transform: none; }
+  .card-emoji, .card:hover .card-emoji { animation: none; }
+}

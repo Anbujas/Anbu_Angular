@@ -1,0 +1,90 @@
+:host { display: contents; }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, .7);
+  animation: overlay-in .2s ease;
+}
+
+.modal-panel {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 24px;
+  background: rgba(10, 14, 26, .95);
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+  animation: panel-in .22s ease;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal-close:hover { color: #ffffff; }
+
+.modal-header h3 { margin: 0 0 8px; padding-right: 28px; color: var(--text); font: 700 16px 'Space Grotesk', sans-serif; }
+.modal-summary { margin: 0; color: var(--emerald-text); font: 600 14px 'Space Grotesk', sans-serif; line-height: 1.5; }
+
+.modal-separator { margin: 18px 0; border: none; border-top: 1px solid var(--card-border); }
+
+.modal-section { margin-bottom: 16px; }
+.modal-section:last-child { margin-bottom: 0; }
+.modal-label { margin: 0 0 4px; color: var(--blue); font: 700 .72rem 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+.modal-section p:not(.modal-label) { margin: 0; color: var(--text); font-size: 14px; line-height: 1.6; }
+
+.metrics-badges { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 4px 0 0; padding: 0; }
+.metrics-badges li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--emerald);
+  color: #ffffff;
+  font: 700 10px 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+.modal-close-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #ffffff;
+  font: 700 14px 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  min-height: 44px;
+  transition: filter .2s ease;
+}
+.modal-close-button:hover { filter: brightness(1.1); }
+
+@keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes panel-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay, .modal-panel { animation: none; }
+}

@@ -1,0 +1,41 @@
+<article class="card" [class.featured]="card.featured">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="card-top">
+        <span class="card-emoji" aria-hidden="true">{{ card.emoji }}</span>
+        <span class="impact-badge" [class]="card.badge.variant" [class.large]="card.badge.variant !== 'blue'">{{ card.badge.label }}</span>
+      </div>
+
+      <canvas #canvas class="card-canvas" aria-hidden="true"></canvas>
+
+      <h3 class="card-title">{{ card.title }}</h3>
+
+      <ul class="tech-badges">
+        <li *ngFor="let tech of card.tech">{{ tech }}</li>
+      </ul>
+
+      <p class="card-summary">{{ card.summary }}</p>
+
+      <button type="button" class="learn-more" (click)="onLearnMore()">Learn more</button>
+    </div>
+
+    <div class="card-back">
+      <p class="back-eyebrow">Case study</p>
+
+      <div class="back-block">
+        <span class="back-label">Problem</span>
+        <p>{{ card.problem }}</p>
+      </div>
+      <div class="back-block">
+        <span class="back-label">Solution</span>
+        <p>{{ card.solution }}</p>
+      </div>
+      <div class="back-block">
+        <span class="back-label">Result</span>
+        <p>{{ card.result }}</p>
+      </div>
+
+      <button type="button" class="learn-more ghost" (click)="onLearnMore()">Full case study</button>
+    </div>
+  </div>
+</article>
