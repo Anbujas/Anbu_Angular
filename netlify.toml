@@ -3,4 +3,7 @@
   publish = "dist/anbu-portfolio/browser"
 
 [build.environment]
-  NODE_VERSION = "20"
+  # Angular 22's build tooling (@angular/build, @angular/cli) requires
+  # Node ^22.22.3 || ^24.15.0 || >=26.0.0 — Node 20 is NOT supported and
+  # will fail the build.
+  NODE_VERSION = "24"
