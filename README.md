@@ -35,23 +35,33 @@ it via `angular.json`) routes `/api/*` to `localhost:8000` in dev.
 npm run build       # outputs to dist/anbu-portfolio/browser
 ```
 
-## Deployment (GitHub Pages)
+## Deployment (Netlify)
 
-`.github/workflows/deploy.yml` builds and publishes the site to GitHub
-Pages on every push to `main`, at `https://anbujas.github.io/portfolio/`.
+`netlify.toml` configures the build (`npm run build`) and publish directory
+(`dist/anbu-portfolio/browser`) for Netlify.
 
-One-time setup, after pushing this repo to GitHub as `anbujas/portfolio`:
+One-time setup:
 
-1. Repo **Settings → Pages → Source** → select **GitHub Actions**.
-2. Push to `main` (or run the workflow manually from the **Actions** tab).
+1. [Netlify dashboard](https://app.netlify.com) → **Add new site → Import
+   an existing project** → connect this repo. Netlify reads `netlify.toml`
+   automatically, so build command and publish directory are already set.
+2. Every push to the connected branch triggers a new deploy.
 
-If you deploy under a different repo name or path, update the
-`--base-href` flag in the workflow to match.
+Or from the CLI, without connecting a git repo:
 
-The FastAPI backend in `server/` is not deployed by this workflow — it's
-static-only. Deploying the backend (if the contact form is wired back in)
-would need separate hosting (Render, Fly.io, etc.) plus a proxy or absolute
-API URL, since GitHub Pages serves static files only.
+```bash
+npm install -g netlify-cli
+npm run build
+netlify deploy --prod --dir=dist/anbu-portfolio/browser
+```
+
+No SPA redirect rule is needed — this app has no client-side router (just
+in-page `#anchor` links), so there's no deep-link path for Netlify to need
+a fallback for.
+
+The FastAPI backend in `server/` is not deployed by this — Netlify serves
+static files only. Deploying the backend (if the contact form is wired back
+in) would need separate hosting (Render, Fly.io, a Netlify Function, etc.).
 
 ## Testing
 
