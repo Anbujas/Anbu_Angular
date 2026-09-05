@@ -3,10 +3,11 @@ import { Component, inject } from '@angular/core';
 import { PortfolioService, PortfolioCard } from './portfolio.service';
 import { PortfolioCardComponent } from './portfolio-card/portfolio-card.component';
 import { CaseStudyModalComponent } from './case-study-modal/case-study-modal.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, PortfolioCardComponent, CaseStudyModalComponent],
+  imports: [CommonModule, PortfolioCardComponent, CaseStudyModalComponent, AboutMeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

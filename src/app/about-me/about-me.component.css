@@ -1,0 +1,93 @@
+:host { display: block; padding: 40px 0 8px; border-top: 2px solid var(--card-border); }
+
+.block { margin: 35px 0; }
+.block:first-child { margin-top: 0; }
+
+.title {
+  margin: 0 0 16px;
+  color: var(--emerald);
+  font: 700 13px 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.divider { height: 2px; margin: 0; background: linear-gradient(to right, var(--card-border), transparent); }
+
+/* SECTION 1: HEADER & NARRATIVE */
+.hook-line { margin: 0 0 8px; color: #ffffff; font: 600 15px/1.5 'Space Grotesk', sans-serif; }
+
+.narrative-card {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: .5px solid var(--card-border);
+  border-left: 3px solid var(--emerald);
+  border-radius: 6px;
+  text-align: center;
+}
+.narrative-text { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* SECTION 2: TECHNICAL SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+.skill-category { padding: 16px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px; }
+.category-title {
+  margin: 0 0 14px;
+  color: var(--emerald);
+  font: 700 13px 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.skill-row { margin-bottom: 12px; }
+.skill-row:last-child { margin-bottom: 0; }
+
+.skill-labels { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.skill-name { color: var(--text); font: 500 13px 'Space Grotesk', sans-serif; }
+.skill-percent { color: var(--emerald); font: 600 13px 'Space Grotesk', sans-serif; }
+
+.progress-track { height: 4px; background: rgba(30, 64, 175, .35); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(to right, var(--emerald), #34d399); border-radius: 2px; }
+
+/* SECTION 3: IMPACT & SCALE */
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+.metric-card { padding: 18px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px; text-align: center; }
+.metric-value { color: var(--emerald); font: 700 26px 'Space Grotesk', sans-serif; line-height: 1.2; }
+.metric-label { margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+/* SECTION 4: ACHIEVEMENTS */
+.achievements-list { display: flex; flex-direction: column; gap: 12px; }
+
+.achievement-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: .5px solid var(--card-border);
+  border-left: 3px solid var(--emerald);
+  border-radius: 6px;
+}
+.achievement-icon { flex-shrink: 0; font-size: 20px; line-height: 1; }
+.achievement-copy { flex: 1; min-width: 0; }
+.achievement-title { margin-bottom: 4px; color: #ffffff; font: 600 13px 'Space Grotesk', sans-serif; }
+.achievement-detail { color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+@media (max-width: 1199.98px) and (min-width: 768px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767.98px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: 1fr; }
+
+  .title { font-size: 12px; }
+  .hook-line { font-size: 14px; }
+  .narrative-text { font-size: 13px; }
+  .skill-name, .skill-percent { font-size: 12px; }
+  .metric-value { font-size: 22px; }
+  .metric-label { font-size: 11px; }
+  .achievement-title { font-size: 12px; }
+  .achievement-detail { font-size: 11px; }
+}

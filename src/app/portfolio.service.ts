@@ -57,7 +57,7 @@ export class PortfolioService {
   readonly profile: Profile = {
     name: 'Anbu Murugesan',
     title: 'Full-Stack Data Engineer & AI Automation Lead',
-    bio: "Architecting enterprise data platforms at Citi's Global Liquidity Reporting System. 3+ years shipping production systems serving 100+ financial analysts. Expert in React, Angular, FastAPI, regulatory domain knowledge (LCR, NSFR, FR2052a). Built AI-powered automation tooling, migrated Oracle to Trino, and led the IFW→Navigator modernization. Award-winning team player driving innovation in financial technology.",
+    bio: "Architecting AI-powered data platforms for Citi's Global Liquidity Reporting System — turning regulatory complexity into systems that scale and save time.",
     photo: 'assets/anbu-photo.png',
     email: 'anbujas18@gmail.com',
     resumeUrl: 'assets/Anbu_Murugesan_Resume.pdf',

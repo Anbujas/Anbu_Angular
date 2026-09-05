@@ -1,0 +1,67 @@
+<!-- SECTION 1: HEADER & NARRATIVE -->
+<div class="block">
+  <h2 class="title">About Me</h2>
+
+  <p class="hook-line">🧠 I speak both languages: engineering excellence AND financial regulation (LCR, NSFR, FR2052a).</p>
+  <p class="hook-line">💡 I don't just write code—I design systems that work independently and scale reliably.</p>
+
+  <div class="narrative-card">
+    <p class="narrative-text">
+      Three years at Citi GLRS: shipped 8 products serving 100+ analysts, built AI systems saving 500+ hours/week, led a 77% performance win. I measure success in human impact.
+    </p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: TECHNICAL SKILLS -->
+<div class="block">
+  <h3 class="title">Technical Skills</h3>
+
+  <div class="skills-grid">
+    <div class="skill-category" *ngFor="let category of skillCategories">
+      <h4 class="category-title">{{ category.title }}</h4>
+
+      <div class="skill-row" *ngFor="let skill of category.skills">
+        <div class="skill-labels">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-percent">{{ skill.percent }}%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" [style.width.%]="skill.percent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 3: IMPACT & SCALE -->
+<div class="block">
+  <h3 class="title">Impact &amp; Scale</h3>
+
+  <div class="metrics-grid">
+    <div class="metric-card" *ngFor="let metric of metrics">
+      <div class="metric-value">{{ metric.value }}</div>
+      <div class="metric-label">{{ metric.label }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 4: ACHIEVEMENTS -->
+<div class="block">
+  <h3 class="title">Achievements</h3>
+
+  <div class="achievements-list">
+    <div class="achievement-card" *ngFor="let achievement of achievements">
+      <span class="achievement-icon" aria-hidden="true">{{ achievement.icon }}</span>
+      <div class="achievement-copy">
+        <div class="achievement-title">{{ achievement.title }}</div>
+        <div class="achievement-detail">{{ achievement.detail }}</div>
+      </div>
+    </div>
+  </div>
+</div>
