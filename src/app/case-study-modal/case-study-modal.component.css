@@ -45,7 +45,7 @@
 .modal-close:hover { color: #ffffff; }
 
 .modal-header h3 { margin: 0 0 8px; padding-right: 28px; color: var(--text); font: 700 16px 'Space Grotesk', sans-serif; }
-.modal-summary { margin: 0; color: var(--emerald-text); font: 600 14px 'Space Grotesk', sans-serif; line-height: 1.5; }
+.modal-summary { margin: 0; color: var(--cyan-text); font: 600 14px 'Space Grotesk', sans-serif; line-height: 1.5; }
 
 .modal-separator { margin: 18px 0; border: none; border-top: 1px solid var(--card-border); }
 

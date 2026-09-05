@@ -38,11 +38,11 @@
 .card.featured .card-front,
 .card.featured .card-back { border-width: 2px; border-color: var(--blue); }
 
-/* Hover: flips to the back and shifts the accent to emerald */
+/* Hover: flips to the back and shifts the accent to cyan */
 .card:hover .card-front,
 .card:hover .card-back {
-  border-color: var(--emerald);
-  box-shadow: 0 0 0 1px rgba(16, 185, 129, .3), 0 12px 26px rgba(0, 0, 0, .35);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px rgba(6, 182, 212, .3), 0 12px 26px rgba(0, 0, 0, .35);
 }
 
 .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
@@ -97,7 +97,7 @@
 
 .card-summary {
   margin: 2px 0 0;
-  color: var(--emerald-text);
+  color: var(--cyan-text);
   font-size: 11px;
   font-weight: 600;
   line-height: 1.45;
@@ -109,7 +109,7 @@
   padding: 10px 14px;
   border: none;
   border-radius: 6px;
-  background: var(--emerald);
+  background: var(--cyan);
   color: #ffffff;
   font: 700 .72rem 'Space Grotesk', sans-serif;
   cursor: pointer;
@@ -119,8 +119,8 @@
 .learn-more:hover { filter: brightness(1.1); }
 .learn-more:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-.learn-more.ghost { background: transparent; border: 1px solid var(--emerald); color: var(--emerald); }
-.learn-more.ghost:hover { background: var(--emerald); color: #ffffff; }
+.learn-more.ghost { background: transparent; border: 1px solid var(--cyan); color: var(--cyan); }
+.learn-more.ghost:hover { background: var(--cyan); color: #ffffff; }
 
 .back-eyebrow { margin: 0; color: var(--teal); font: 700 9px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .08em; }
 .back-block p { margin: 2px 0 0; color: #cbd5e1; font-size: .66rem; line-height: 1.45; }

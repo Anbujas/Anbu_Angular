@@ -20,7 +20,7 @@ export interface CardBadge {
 }
 
 export interface SocialLink {
-  icon: 'email' | 'github' | 'linkedin' | 'website';
+  icon: 'email' | 'github' | 'linkedin' | 'website' | 'phone';
   label: string;
   href: string;
 }
@@ -64,6 +64,7 @@ export class PortfolioService {
     social: [
       { icon: 'email', label: 'anbujas18@gmail.com', href: 'mailto:anbujas18@gmail.com' },
       { icon: 'website', label: 'anbu-murugesan.netlify.app', href: 'https://anbu-murugesan.netlify.app/' },
+      { icon: 'phone', label: '(917) 244-3599', href: 'tel:+19172443599' },
     ],
   };
 
@@ -135,7 +136,7 @@ export class PortfolioService {
     },
     {
       id: 'jira-tracker-integration',
-      emoji: '🎫',
+      emoji: '🔄',
       title: 'Jira Tracker Integration',
       tech: ['Python', 'Jira API', 'SharePoint API', 'REST API', 'Slack API', 'Automation'],
       badge: { label: 'COMPLETED', variant: 'blue' },
@@ -194,14 +195,14 @@ export class PortfolioService {
       title: 'Learning Management System',
       tech: ['React', 'Node.js', 'MongoDB', 'Video Streaming', 'Stripe API', 'SendGrid API', 'Auth0'],
       badge: { label: 'COMPLETED', variant: 'blue' },
-      summary: 'Full-stack LMS serving 500+ students | $30K saved in 6 months | 60% cost reduction',
+      summary: 'Full-stack LMS for physicians & researchers | $30K saved in 6 months | 60% cost reduction',
       problem:
-        'Nikaya, a nonprofit education platform, was paying roughly $60K a year for commercial LMS platforms like Teachable and Kajabi, which offered little customization for nonprofit-specific workflows, charged per-student licensing that made scaling expensive, and made data export slow enough to feel like vendor lock-in — on top of ongoing GDPR compliance headaches. The goal was a scalable, affordable, fully customizable LMS that could serve 500+ students.',
+        'PPAHS (Physician-Patient Alliance for Health and Safety) was paying roughly $60K a year for commercial LMS platforms like Teachable and Kajabi, which offered little customization for clinical training workflows, charged per-learner licensing that made scaling expensive, and made data export slow enough to feel like vendor lock-in — on top of ongoing GDPR compliance headaches. The goal was a scalable, affordable, fully customizable LMS that could serve 500+ physicians and researchers.',
       solution:
-        'Built a full-stack LMS from scratch: a React frontend with course catalog search, a student dashboard for progress and certificates, and an S3-streamed, mobile-first video player; a Node.js REST API with role-based access for students, instructors and admins handling enrollment, progress tracking and certificate generation; and a MongoDB database designed to scale horizontally for course content, progress and transaction data. Stripe handles course purchases, subscriptions and invoicing, SendGrid sends course reminders, certificate delivery and enrollment alerts, and Auth0 provides secure login with social sign-in and role-based access control.',
+        'Built a full-stack LMS from scratch for PPAHS: a React frontend with course catalog search, a learner dashboard for progress and certificates, and an S3-streamed, mobile-first video player; a Node.js REST API with role-based access for physicians, researchers, instructors and admins handling enrollment, progress tracking and certificate generation; and a MongoDB database designed to scale horizontally for course content, progress and transaction data. Stripe handles course purchases, subscriptions and invoicing, SendGrid sends course reminders, certificate delivery and enrollment alerts, and Auth0 provides secure login with social sign-in and role-based access control.',
       result:
-        "The platform saved $30K in its first six months against the prior $60K/year commercial cost — a 60% reduction — while onboarding 500+ students and holding 99% uptime, with nonprofit-specific workflows the commercial platforms simply didn't offer. Adaptive-bitrate video streaming keeps playback smooth on variable bandwidth, MongoDB queries are indexed for sub-100ms response times, and the architecture auto-scales horizontally while staying GDPR-ready and COPPA compliant.",
-      keyMetrics: ['$30K SAVED', '500+ STUDENTS', '99% UPTIME', '60% COST REDUCTION', 'CUSTOM WORKFLOWS'],
+        "The platform saved $30K in its first six months against the prior $60K/year commercial cost — a 60% reduction — while onboarding 500+ physicians and researchers and holding 99% uptime, with clinical training workflows the commercial platforms simply didn't offer. Adaptive-bitrate video streaming keeps playback smooth on variable bandwidth, MongoDB queries are indexed for sub-100ms response times, and the architecture auto-scales horizontally while staying GDPR-ready.",
+      keyMetrics: ['$30K SAVED', '500+ LEARNERS', '99% UPTIME', '60% COST REDUCTION', 'CUSTOM WORKFLOWS'],
       animation: 'circle-grow',
     },
     {

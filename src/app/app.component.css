@@ -18,6 +18,7 @@
 .social-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s ease; }
 .social-links a:hover { color: var(--blue); }
 .social-icon { display: inline-flex; }
+.social-emoji { font-size: 15px; line-height: 1; }
 
 .card-section { padding: 40px 0 56px; border-top: 2px solid var(--card-border); }
 .section-kicker { margin: 0 0 6px; color: var(--teal); font: 700 12px 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .1em; }
@@ -34,7 +35,7 @@
 }
 .cta-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
 .cta-button:focus-visible, .social-links a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
-.cta-button.emerald { background: var(--emerald); }
+.cta-button.cyan { background: var(--cyan); }
 .cta-button.teal { background: var(--teal); }
 
 .footer { padding-top: 24px; border-top: 1px solid var(--card-border); color: var(--muted); font-size: .72rem; text-align: center; }

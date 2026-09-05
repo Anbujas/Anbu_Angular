@@ -5,7 +5,7 @@
 
 .title {
   margin: 0 0 16px;
-  color: var(--emerald);
+  color: var(--cyan);
   font: 700 13px 'Space Grotesk', sans-serif;
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -15,17 +15,6 @@
 
 /* SECTION 1: HEADER & NARRATIVE */
 .hook-line { margin: 0 0 8px; color: #ffffff; font: 600 15px/1.5 'Space Grotesk', sans-serif; }
-
-.narrative-card {
-  margin-top: 16px;
-  padding: 16px;
-  background: var(--card-bg);
-  border: .5px solid var(--card-border);
-  border-left: 3px solid var(--emerald);
-  border-radius: 6px;
-  text-align: center;
-}
-.narrative-text { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
 
 /* SECTION 2: TECHNICAL SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
@@ -47,16 +36,16 @@
 .skill-percent { color: var(--text); font: 600 13px 'Space Grotesk', sans-serif; }
 
 .progress-track { height: 4px; background: rgba(30, 64, 175, .35); border-radius: 2px; overflow: hidden; }
-.progress-fill { height: 100%; background: linear-gradient(to right, var(--emerald), #34d399); border-radius: 2px; }
+.progress-fill { height: 100%; background: linear-gradient(to right, var(--cyan), var(--cyan-light)); border-radius: 2px; }
 
 /* SECTION 3: IMPACT & SCALE */
 .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 
 .metric-card { padding: 18px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px; text-align: center; }
-.metric-value { color: var(--emerald); font: 700 26px 'Space Grotesk', sans-serif; line-height: 1.2; }
+.metric-value { color: var(--cyan); font: 700 26px 'Space Grotesk', sans-serif; line-height: 1.2; }
 .metric-label { margin-top: 6px; color: var(--muted); font-size: 12px; }
 
-/* SECTION 4: ACHIEVEMENTS */
+/* SECTIONS 4 & 5: ACHIEVEMENTS & CERTIFICATIONS */
 .achievements-list { display: flex; flex-direction: column; gap: 12px; }
 
 .achievement-card {
@@ -66,13 +55,35 @@
   padding: 16px;
   background: var(--card-bg);
   border: .5px solid var(--card-border);
-  border-left: 3px solid var(--emerald);
+  border-left: 3px solid var(--cyan);
   border-radius: 6px;
 }
 .achievement-icon { flex-shrink: 0; font-size: 20px; line-height: 1; }
 .achievement-copy { flex: 1; min-width: 0; }
 .achievement-title { margin-bottom: 4px; color: #ffffff; font: 600 13px 'Space Grotesk', sans-serif; }
 .achievement-detail { color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+/* SECTION 6: CTA BUTTONS */
+.cta-block { margin-top: 40px; }
+
+.cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--cyan);
+  text-decoration: none;
+  font: 600 13px 'Space Grotesk', sans-serif;
+  transition: filter .2s ease, transform .2s ease;
+}
+.cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+.cta-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.cta-btn.filled { background: var(--cyan); color: var(--bg); }
+.cta-btn.outline { background: transparent; color: var(--cyan); }
 
 @media (max-width: 1199.98px) and (min-width: 768px) {
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -84,10 +95,17 @@
 
   .title { font-size: 12px; }
   .hook-line { font-size: 14px; }
-  .narrative-text { font-size: 13px; }
   .skill-name, .skill-percent { font-size: 12px; }
   .metric-value { font-size: 22px; }
   .metric-label { font-size: 11px; }
   .achievement-title { font-size: 12px; }
   .achievement-detail { font-size: 11px; }
+
+  .cta-buttons { flex-direction: column; }
+  .cta-btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-btn { transition: none; }
+  .cta-btn:hover { transform: none; }
 }
