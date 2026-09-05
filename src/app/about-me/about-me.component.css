@@ -33,7 +33,7 @@
 .skill-category { padding: 16px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px; }
 .category-title {
   margin: 0 0 14px;
-  color: var(--emerald);
+  color: var(--text);
   font: 700 13px 'Space Grotesk', sans-serif;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -44,7 +44,7 @@
 
 .skill-labels { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .skill-name { color: var(--text); font: 500 13px 'Space Grotesk', sans-serif; }
-.skill-percent { color: var(--emerald); font: 600 13px 'Space Grotesk', sans-serif; }
+.skill-percent { color: var(--text); font: 600 13px 'Space Grotesk', sans-serif; }
 
 .progress-track { height: 4px; background: rgba(30, 64, 175, .35); border-radius: 2px; overflow: hidden; }
 .progress-fill { height: 100%; background: linear-gradient(to right, var(--emerald), #34d399); border-radius: 2px; }
