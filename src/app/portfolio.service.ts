@@ -20,7 +20,7 @@ export interface CardBadge {
 }
 
 export interface SocialLink {
-  icon: 'email' | 'github' | 'linkedin';
+  icon: 'email' | 'github' | 'linkedin' | 'website';
   label: string;
   href: string;
 }
@@ -63,7 +63,7 @@ export class PortfolioService {
     resumeUrl: 'assets/Anbu_Murugesan_Resume.pdf',
     social: [
       { icon: 'email', label: 'anbujas18@gmail.com', href: 'mailto:anbujas18@gmail.com' },
-      { icon: 'github', label: 'anbujas.github.io/portfolio', href: 'https://anbujas.github.io/portfolio' },
+      { icon: 'website', label: 'anbu-murugesan.netlify.app', href: 'https://anbu-murugesan.netlify.app/' },
     ],
   };
 
